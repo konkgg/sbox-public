@@ -22,6 +22,7 @@ class RenderQualityProfiles
 		SetGroupConVars( "PostProcessQuality", settings.PostProcessQuality.ToString() );
 		SetGroupConVars( "VolumetricFogQuality", settings.VolumetricFogQuality.ToString() );
 		SetGroupConVars( "ShadowQuality", settings.ShadowQuality.ToString() );
+		SetGroupConVars( "RayTracingQuality", settings.RayTracingQuality.ToString() );
 	}
 
 	/// <summary>

@@ -1,0 +1,143 @@
+{
+  "__guid": "rt-demo-scene-0001-0000-0000-000000000001",
+  "GameObjects": [
+    {
+      "__guid": "rt-demo-sun-0000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "200,-300,300",
+      "Rotation": "0.749052,0.5386431,-0.3131638,0.2251959",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "rt-demo-sunlight-comp-0000-000000000001",
+          "Brightness": 3,
+          "LightColor": "1,0.95,0.85,1",
+          "SkyColor": "0.2,0.4,0.8,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "rt-demo-floor-0000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "Floor",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "rt-demo-floorrender-000-000000000001",
+          "Model": "models/dev/box.vmdl",
+          "MaterialOverride": ""
+        },
+        {
+          "__type": "Sandbox.ModelCollider",
+          "__guid": "rt-demo-floorcoll-0000-000000000001",
+          "Model": "models/dev/box.vmdl"
+        }
+      ],
+      "Children": [],
+      "Scale": "500,500,10"
+    },
+    {
+      "__guid": "rt-demo-sphere-0000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "Sphere A",
+      "Position": "-100,0,50",
+      "Rotation": "0,0,0,1",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "rt-demo-sphererender-00-000000000001",
+          "Model": "models/dev/sphere.vmdl",
+          "MaterialOverride": ""
+        }
+      ],
+      "Children": [],
+      "Scale": "50,50,50"
+    },
+    {
+      "__guid": "rt-demo-sphere-0000-0000-0000-000000000002",
+      "Flags": 0,
+      "Name": "Sphere B",
+      "Position": "100,50,50",
+      "Rotation": "0,0,0,1",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "rt-demo-sphererender-00-000000000002",
+          "Model": "models/dev/sphere.vmdl",
+          "MaterialOverride": ""
+        }
+      ],
+      "Children": [],
+      "Scale": "60,60,60"
+    },
+    {
+      "__guid": "rt-demo-box-000000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "Box",
+      "Position": "0,-120,40",
+      "Rotation": "0,0,0.3826834,0.9238796",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "rt-demo-boxrender-0000-000000000001",
+          "Model": "models/dev/box.vmdl",
+          "MaterialOverride": ""
+        }
+      ],
+      "Children": [],
+      "Scale": "80,80,80"
+    },
+    {
+      "__guid": "rt-demo-camera-0000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-300,0,200",
+      "Rotation": "0.1830127,0,-0.6830127,0.7071068",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "rt-demo-cameracomp-0000-000000000001",
+          "ZNear": 10,
+          "ZFar": 10000,
+          "FieldOfView": 75
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "rt-demo-manager-0000-0000-0000-000000000001",
+      "Flags": 0,
+      "Name": "RT Demo Manager",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Tags": "",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "RayTracingDemo",
+          "__guid": "rt-demo-democomp-0000-000000000001",
+          "Quality": 3,
+          "AnimateObjects": true,
+          "RotationSpeed": 30
+        }
+      ],
+      "Children": []
+    }
+  ]
+}

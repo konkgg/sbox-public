@@ -19,6 +19,7 @@ internal partial class RenderPipeline
 	QuarterDepthDownsampleLayer QuarterDepthDownsampleLayer { get; } = new();
 	MediaRecorderLayer RecordMovieFrameLayer { get; } = new();
 	MediaRecorderOverlayLayer PostRecordMovieFrameLayer { get; } = new();
+	RayTracingLayer RayTracingLayer { get; } = new();
 
 	internal void AddLayersToView( ISceneView view, RenderViewport viewport, SceneViewRenderTargetHandle rtColor, SceneViewRenderTargetHandle rtDepth, RenderMultisampleType nMSAA, CRenderAttributes pipelineAttrs, RenderViewport screenSize )
 	{
@@ -72,6 +73,13 @@ internal partial class RenderPipeline
 		{
 			DepthDownsampleLayer.Setup( viewport, rtDepth, msaaInput: msaa != MultisampleAmount.MultisampleNone, view );
 			DepthDownsampleLayer.AddToView( view, viewport );
+		}
+
+		// Ray Tracing: dispatches RT shadows and reflections using the G-buffer produced above.
+		// Only active when hardware RT is supported and RayTracingQuality != Off.
+		{
+			RayTracingLayer.Setup( view, viewport, tlas: null );
+			RayTracingLayer.AddToView( view, viewport );
 		}
 
 		// Bloom layer, Effects that only show up on bloom like a ghost effect

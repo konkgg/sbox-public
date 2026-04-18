@@ -79,6 +79,23 @@ public partial class RenderSettings
 		}
 	}
 
+	/// <summary>
+	/// Controls hardware ray-tracing quality.
+	/// When set to <see cref="RayTracingQuality.Off"/> (or when the hardware does not support
+	/// ray tracing), the engine falls back to screen-space shadows and reflections.
+	/// </summary>
+	public RayTracingQuality RayTracingQuality
+	{
+		get => VideoSettings.Get<RayTracingQuality>( "raytracing.quality", RayTracingQuality.Off );
+		set
+		{
+			VideoSettings.Set<RayTracingQuality>( "raytracing.quality", value );
+			Config.SetGroupConVars( "RayTracingQuality", value.ToString() );
+			// Reset the capability cache so the RT layers re-evaluate on next frame.
+			Graphics.InvalidateRayTracingCapabilityCache();
+		}
+	}
+
 	public float MotionBlurScale
 	{
 		get => VideoSettings.Get<float>( "motionblur.scale", 1.0f );
