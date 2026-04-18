@@ -204,6 +204,15 @@ public class ModalSystem : IModalSystem
 		Push( new WorkshopPublishModal { Options = options } );
 	}
 
+	public void Notice( string title, string message, string icon )
+	{
+		var modal = new NoticeModal();
+		modal.Title = title;
+		modal.Message = message;
+		modal.Icon = icon;
+		Push( modal );
+	}
+
 	public bool IsModalOpen => HasModalsOpen();
 	public bool IsPauseMenuOpen => _pauseModal.IsValid() && _pauseModal.IsPauseMenuOpen();
 }
