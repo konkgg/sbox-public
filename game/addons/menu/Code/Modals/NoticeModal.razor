@@ -1,0 +1,27 @@
+@namespace MenuProject.Modals
+@inherits MenuProject.Modals.BaseModal
+
+<root class="notice-modal">
+
+	<div class="inner">
+		@if ( !string.IsNullOrEmpty( Icon ) )
+		{
+			<i>@Icon</i>
+		}
+		<h1>@Title</h1>
+		<p>@Message</p>
+		<div class="footer">
+			<Button @onclick="@( () => CloseModal( true ) )" Text="OK"></Button>
+		</div>
+	</div>
+
+</root>
+
+@code
+{
+	public string Title { get; set; }
+	public string Message { get; set; }
+	public string Icon { get; set; }
+
+	protected override int BuildHash() => System.HashCode.Combine( Title, Message, Icon );
+}

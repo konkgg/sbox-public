@@ -22,6 +22,11 @@ public interface IModalSystem
 	public void WorkshopPublish( in WorkshopPublishOptions options );
 
 	/// <summary>
+	/// Show a simple notice dialog with a title, message and icon.
+	/// </summary>
+	public void Notice( string title, string message, string icon );
+
+	/// <summary>
 	/// The menu that is shown when escape is pressed while playing.
 	/// </summary>
 	public void PauseMenu();
