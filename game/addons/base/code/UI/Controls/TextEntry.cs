@@ -86,6 +86,7 @@ public partial class TextEntry : BaseControl
 		set => Label.CaretPosition = value;
 	}
 
+	[Obsolete]
 	public override bool HasContent => true;
 
 	/// <summary>
@@ -531,6 +532,7 @@ public partial class TextEntry : BaseControl
 	}
 
 
+	[Obsolete]
 	public override void BuildContentCommandList( CommandList commandList, ref RenderState state )
 	{
 		Label.ShouldDrawSelection = HasFocus;
